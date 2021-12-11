@@ -1,0 +1,7 @@
+{
+  "require": {
+    "miladrahimi/php-jwt": "2.*",
+    "ankitpokhrel/tus-php": "^2.1",
+    "ext-pdo": "*"
+  }
+}
