@@ -114,15 +114,15 @@ class Auth
             'created_at' => (new DateTime())->format('Y-m-d H:i:s'),
 //            'updated_at' => (new DateTime())->format('Y-m-d H:i:s'),
         ]);
-
-        if ($insert === true) {
-            $this->app->response::response(200, ['message' => 'Account created successfully!']);
-            return;
-        }
-        if ($insert == '23000') {
+        if ($insert === '23000') {
             $this->app->response::response(401, ['message' => 'User with this email already exist']);
             return;
         }
+        if ($insert) {
+            $this->app->response::response(200, ['message' => 'Account created successfully!']);
+            return;
+        }
+
         $this->app->response::response(401, ['message' => 'Something went wrong. Account creation failed. ']);
     }
 }
